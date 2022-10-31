@@ -1,4 +1,4 @@
-.ready(() => {
+$(document).ready(() => {
     let list = {}
     $(".check").on("click", () => {
         $(this).each(() => {
