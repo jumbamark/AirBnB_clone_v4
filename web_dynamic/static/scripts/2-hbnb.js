@@ -1,26 +1,26 @@
-.ready(() => {
+$(document).ready(() => {
     let list = {}
-    .on("click", () => {
-        .each(() => {
+    $(".check").on("click", () => {
+        $(this).each(() => {
             if (this.checked) {
-                list[.data("id")] = .data("name");
+                list[$(this).data("id")] = $(this).data("name");
             } else {
-                delete list..data("id")
+                delete list.$(this).data("id")
             }
         })
     })
 
     if (Object.values(list).length > 0) {
-        .text(Object.values(list).join(", "))
+        $(".amenities h4").text(Object.values(list).join(", "))
     } else {
-        .html("&nbsp;")
+        $(".amenities h4").html("&nbsp;")
     }
 })
 
 $.get("http://0.0.0.0:5001/api/v1/status/", (data, res) => {
     if (data.status === 'OK') {
-        .addClass("available");
+        $("div#api_status").addClass("available");
     } else {
-        .removeClass("available");     
+        $("div#api_status").removeClass("available");     
     }
 })
